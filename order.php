@@ -1,5 +1,5 @@
 <?php
-include ('config/db_connect.php');
+include('config/db_connect.php');
 
 $customer_phone = '';
 $errors = array('customer_phone' => '');
@@ -43,12 +43,13 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 
-<?php include ('templates/header.php'); ?>
+<?php include('templates/header.php'); ?>
 
 <html>
+
 <head>
     <title>Order a Pizza</title>
-    
+
 </head>
 
 <body>
@@ -65,6 +66,7 @@ if (isset($_POST['submit'])) {
         </form>
     </section>
 
-    <?php include ('templates/footer.php'); ?>
+    <?php include('templates/footer.php'); ?>
 </body>
+
 </html>

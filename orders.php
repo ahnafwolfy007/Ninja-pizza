@@ -1,5 +1,5 @@
 <?php
-include ('config/db_connect.php');
+include('config/db_connect.php');
 
 
 $sql_orders = "SELECT orders.id, orders.customer_phone, orders.status, pizza.title, order_date
@@ -46,26 +46,35 @@ if (isset($_POST['delete_order'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Order List</title>
     <style>
         .brand {
             background: #cbb09c !important;
         }
+
         .brand-text {
             color: #cbb09c !important;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        th, td {
+
+        th,
+        td {
             padding: 8px;
             text-align: left;
         }
+
         .btn-danger {
             background-color: red;
             color: white;
@@ -73,13 +82,15 @@ if (isset($_POST['delete_order'])) {
             padding: 8px 16px;
             cursor: pointer;
         }
+
         .btn-danger:hover {
             background-color: darkred;
         }
     </style>
 </head>
+
 <body>
-    <?php include ('templates/header.php'); ?>
+    <?php include('templates/header.php'); ?>
 
     <section class="container grey-text">
         <h4 class="center">Orders</h4>
@@ -104,13 +115,13 @@ if (isset($_POST['delete_order'])) {
                         <td><?php echo htmlspecialchars($order['order_date']); ?></td>
                         <td>
                             <?php if ($order['status'] == 'placed') { ?>
-                                
-                                    <form action="orders.php" method="POST" style="display:inline;">
+
+                                <form action="orders.php" method="POST" style="display:inline;">
                                     <button type="submit" name="serve_order" class=" btn-served">Served</button>
                                     <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
                                     <button type="submit" name="cancel_order" class=" btn-cancel">Cancel</button>
                                 </form>
-                            <?php }  elseif ($order['status'] == 'canceled') { ?>
+                            <?php } elseif ($order['status'] == 'canceled') { ?>
                                 <form action="orders.php" method="POST" style="display:inline;">
                                     <input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
                                     <button type="submit" name="delete_order" class=" btn-danger">Delete</button>
@@ -125,6 +136,7 @@ if (isset($_POST['delete_order'])) {
         </table>
     </section>
 
-    <?php include ('templates/footer.php'); ?>
+    <?php include('templates/footer.php'); ?>
 </body>
+
 </html>

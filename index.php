@@ -1,21 +1,21 @@
-<?php 
+<?php
 
-	include('config/db_connect.php');
+include('config/db_connect.php');
 
-	
-	$sql = "SELECT title, ingredients, id FROM pizza ORDER BY created_at";
 
-	
-	$result = mysqli_query($conn, $sql);
+$sql = "SELECT title, ingredients, id FROM pizza ORDER BY created_at";
 
-	
-	$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-	
-	mysqli_free_result($result);
+$result = mysqli_query($conn, $sql);
 
-	
-	mysqli_close($conn);
+
+$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+mysqli_free_result($result);
+
+
+mysqli_close($conn);
 
 
 ?>
@@ -23,40 +23,40 @@
 <!DOCTYPE html>
 <html>
 
-	
-	<?php include('templates/header.php'); ?>
 
-	<h4 class="center">Pizza Menu</h4>
+<?php include('templates/header.php'); ?>
 
-	<div class="container">
-		<div class="row">
+<h4 class="center">Pizza Menu</h4>
 
-			<?php foreach($pizzas as $pizza): ?>
+<div class="container">
+     <div class="row">
 
-				<div class="col s6 md3">
-                         <div class="card z-depth-0">
-                              <img src="img/pizza.svg"  class="pizza">
-                              <div class="card-content center">
-                                   <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
-                                   <ul>
-                                        <?php foreach(explode(',', $pizza['ingredients']) as $ing) {?>
-                                             <li><?php echo htmlspecialchars($ing); ?></li>
-                                             <?php } ?>
-                                   </ul>
-                              </div>
-                              <div class="card-action ">
-                                   <a class="grey-text left-align" href="order.php?id= <?php echo $pizza['id'] ?>">order</a>
+          <?php foreach ($pizzas as $pizza) : ?>
 
-                                   <a class="grey-text right-align" href="details.php?id= <?php echo $pizza['id'] ?>">more info</a>
-                              </div>
+               <div class="col s6 md3">
+                    <div class="card z-depth-0">
+                         <img src="img/pizza.svg" class="pizza">
+                         <div class="card-content center">
+                              <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
+                              <ul>
+                                   <?php foreach (explode(',', $pizza['ingredients']) as $ing) { ?>
+                                        <li><?php echo htmlspecialchars($ing); ?></li>
+                                   <?php } ?>
+                              </ul>
+                         </div>
+                         <div class="card-action ">
+                              <a class="grey-text left-align" href="order.php?id= <?php echo $pizza['id'] ?>">order</a>
+
+                              <a class="grey-text right-align" href="details.php?id= <?php echo $pizza['id'] ?>">more info</a>
                          </div>
                     </div>
+               </div>
 
-			<?php endforeach; ?>
+          <?php endforeach; ?>
 
-		</div>
-	</div>
+     </div>
+</div>
 
-	<?php include('templates/footer.php'); ?>
+<?php include('templates/footer.php'); ?>
 
 </html>

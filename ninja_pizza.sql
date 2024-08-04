@@ -95,7 +95,7 @@ INSERT INTO `pizza` (`id`, `title`, `ingredients`, `email`, `created_at`) VALUES
 (2, 'Iron Wheel', 'Tuna, Cheese, Sauce', 'greyjoy.baelon@iron.com', '2024-08-01 16:18:34'),
 (3, 'Winter Rock', 'Beef Sizzled, BBQ ketchup, Cheese, Onion', 'robb@stark.lord', '2024-08-01 18:20:03'),
 (44, 'Dragon Breath', 'Hot sauce, Cheese, Beef, Chicken', 'targ@val.co', '2024-08-02 18:29:33'),
-(45, 'BBQ Meat Machine', 'BBQ sauce, Beef, Chicken, Hot Dog', 'wolfionnov07@gmail.com', '2024-08-02 19:42:28'),
+(45, 'BBQ Meat Machine', 'BBQ sauce, Beef, Chicken, Sausage', 'wolfionnov07@gmail.com', '2024-08-02 19:42:28'),
 (46, 'Tyrion Special', 'Beef Sausage, Pork, Ketchup, Onion', 'Lannster@casrterly.rock', '2024-08-02 22:36:34');
 
 --

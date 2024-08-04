@@ -9,7 +9,7 @@ if(isset($_POST['delete'])){
 	$sql = "DELETE FROM pizza WHERE id= $id_to_delete";
 
 	if(!mysqli_query($conn,$sql))
-		 echo 'query error'.mysql_error();
+		 echo 'query error'.mysqli_error($conn);
 }
 
 

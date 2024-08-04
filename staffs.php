@@ -1,5 +1,5 @@
 <?php
-include ('config/db_connect.php');
+include('config/db_connect.php');
 
 // Fetch ninjas
 $sql = "SELECT * FROM ninjas ORDER BY id DESC";
@@ -21,12 +21,13 @@ if (isset($_POST['delete_ninja'])) {
 
 <!DOCTYPE html>
 
-<?php include ('templates/header.php'); ?>
+<?php include('templates/header.php'); ?>
 
 <html>
+
 <head>
     <title>Ninjas </title>
-    </head>
+</head>
 
 <body>
 
@@ -60,6 +61,7 @@ if (isset($_POST['delete_ninja'])) {
         </table>
     </section>
 
-    <?php include ('templates/footer.php'); ?>
+    <?php include('templates/footer.php'); ?>
 </body>
+
 </html>
