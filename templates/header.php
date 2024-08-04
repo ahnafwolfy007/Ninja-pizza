@@ -35,7 +35,9 @@
 
     .icon {
       width: 60px;
-      margin: 30px auto top:-10px;
+      margin: 30px auto ;
+      top:-28px;
+      left: -10px;
       position: relative;
     }
 
