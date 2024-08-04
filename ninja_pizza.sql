@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2024 at 12:39 AM
+-- Generation Time: Aug 04, 2024 at 12:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,23 +55,22 @@ CREATE TABLE `orders` (
   `pizza_id` int(11) NOT NULL,
   `customer_phone` varchar(20) NOT NULL,
   `status` enum('placed','served','canceled') NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `delivered_time` timestamp NULL DEFAULT NULL
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `pizza_id`, `customer_phone`, `status`, `order_date`, `delivered_time`) VALUES
-(12, 1, '01978213836', 'served', '2024-08-02 21:52:51', '2024-08-02 21:56:04'),
-(13, 1, '01983144814', 'served', '2024-08-02 21:56:11', '2024-08-02 21:56:58'),
-(15, 1, '01234567899', 'served', '2024-08-02 21:58:38', NULL),
-(16, 1, '01983144814', 'canceled', '2024-08-02 21:58:53', NULL),
-(17, 2, '01983144814', 'served', '2024-08-02 21:59:03', NULL),
-(18, 44, '01766699999', 'canceled', '2024-08-02 21:59:12', NULL),
-(19, 45, '01978213836', 'placed', '2024-08-02 22:03:31', NULL),
-(20, 46, '01766699999', 'placed', '2024-08-02 22:36:44', NULL);
+INSERT INTO `orders` (`id`, `pizza_id`, `customer_phone`, `status`, `order_date`) VALUES
+(12, 1, '01978213836', 'served', '2024-08-02 21:52:51'),
+(13, 1, '01983144814', 'served', '2024-08-02 21:56:11'),
+(15, 1, '01234567899', 'served', '2024-08-02 21:58:38'),
+(16, 1, '01983144814', 'canceled', '2024-08-02 21:58:53'),
+(17, 2, '01983144814', 'served', '2024-08-02 21:59:03'),
+(18, 44, '01766699999', 'canceled', '2024-08-02 21:59:12'),
+(19, 45, '01978213836', 'placed', '2024-08-02 22:03:31'),
+(20, 46, '01766699999', 'placed', '2024-08-02 22:36:44');
 
 -- --------------------------------------------------------
 
